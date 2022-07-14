@@ -1,0 +1,205 @@
+13:12:29 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\USER\Desktop\Vivado\Vitis\hw4\temp_xsdb_launch_script.tcl
+13:12:30 INFO  : Registering command handlers for Vitis TCF services
+13:13:27 INFO  : XSCT server has started successfully.
+13:13:52 INFO  : Platform repository initialization has completed.
+13:15:07 INFO  : plnx-install-location is set to ''
+13:15:07 INFO  : Successfully done query RDI_DATADIR 
+13:15:07 INFO  : Successfully done setting XSCT server connection channel  
+13:15:07 INFO  : Successfully done setting workspace for the tool. 
+13:19:03 INFO  : Result from executing command 'getProjects': MEM_SYSTEM_wrapper
+13:19:03 INFO  : Result from executing command 'getPlatforms': 
+13:19:03 WARN  : An unexpected exception occurred in the module 'platform project logging'
+13:19:05 INFO  : Platform 'MEM_SYSTEM_wrapper' is added to custom repositories.
+13:19:32 INFO  : Platform 'MEM_SYSTEM_wrapper' is added to custom repositories.
+15:11:16 INFO  : Result from executing command 'getProjects': MEM_SYSTEM_wrapper
+15:11:17 INFO  : Result from executing command 'getPlatforms': MEM_SYSTEM_wrapper|C:/Users/USER/Desktop/Vivado/Vitis/hw4/MEM_SYSTEM_wrapper/export/MEM_SYSTEM_wrapper/MEM_SYSTEM_wrapper.xpfm
+15:11:27 INFO  : Checking for BSP changes to sync application flags for project 'hw4_prog'...
+15:12:56 INFO  : Checking for BSP changes to sync application flags for project 'hw4_prog'...
+15:14:20 INFO  : Checking for BSP changes to sync application flags for project 'hw4_prog'...
+15:14:40 INFO  : Checking for BSP changes to sync application flags for project 'hw4_prog'...
+15:16:15 INFO  : Checking for BSP changes to sync application flags for project 'hw4_prog'...
+15:16:57 INFO  : Checking for BSP changes to sync application flags for project 'hw4_prog'...
+15:17:14 INFO  : Checking for BSP changes to sync application flags for project 'hw4_prog'...
+15:35:55 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+15:36:00 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+15:36:00 INFO  : 'jtag frequency' command is executed.
+15:36:00 INFO  : Context for 'APU' is selected.
+15:36:00 INFO  : System reset is completed.
+15:36:03 INFO  : 'after 3000' command is executed.
+15:36:04 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+15:36:06 INFO  : Device configured successfully with "C:/Users/USER/Desktop/Vivado/Vitis/hw4/hw4_prog/_ide/bitstream/MEM_SYSTEM_wrapper.bit"
+15:36:07 INFO  : Context for 'APU' is selected.
+15:36:07 INFO  : Hardware design and registers information is loaded from 'C:/Users/USER/Desktop/Vivado/Vitis/hw4/MEM_SYSTEM_wrapper/export/MEM_SYSTEM_wrapper/hw/MEM_SYSTEM_wrapper.xsa'.
+15:36:07 INFO  : 'configparams force-mem-access 1' command is executed.
+15:36:07 INFO  : Context for 'APU' is selected.
+15:36:07 INFO  : Sourcing of 'C:/Users/USER/Desktop/Vivado/Vitis/hw4/hw4_prog/_ide/psinit/ps7_init.tcl' is done.
+15:36:08 INFO  : 'ps7_init' command is executed.
+15:36:08 INFO  : 'ps7_post_config' command is executed.
+15:36:08 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:36:08 INFO  : The application 'C:/Users/USER/Desktop/Vivado/Vitis/hw4/hw4_prog/Debug/hw4_prog.elf' is downloaded to processor 'ps7_cortexa9_0'.
+15:36:09 INFO  : 'configparams force-mem-access 0' command is executed.
+15:36:09 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file C:/Users/USER/Desktop/Vivado/Vitis/hw4/hw4_prog/_ide/bitstream/MEM_SYSTEM_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/USER/Desktop/Vivado/Vitis/hw4/MEM_SYSTEM_wrapper/export/MEM_SYSTEM_wrapper/hw/MEM_SYSTEM_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/USER/Desktop/Vivado/Vitis/hw4/hw4_prog/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/USER/Desktop/Vivado/Vitis/hw4/hw4_prog/Debug/hw4_prog.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+15:36:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+15:36:09 INFO  : 'con' command is executed.
+15:36:09 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+15:36:09 INFO  : Disconnected from the channel tcfchan#2.
+16:26:29 INFO  : Checking for BSP changes to sync application flags for project 'hw4_prog'...
+16:26:56 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:26:56 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+16:26:56 INFO  : 'jtag frequency' command is executed.
+16:26:56 INFO  : Context for 'APU' is selected.
+16:26:56 INFO  : System reset is completed.
+16:26:59 INFO  : 'after 3000' command is executed.
+16:26:59 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+16:27:02 INFO  : Device configured successfully with "C:/Users/USER/Desktop/Vivado/Vitis/hw4/hw4_prog/_ide/bitstream/MEM_SYSTEM_wrapper.bit"
+16:27:02 INFO  : Context for 'APU' is selected.
+16:27:02 INFO  : Hardware design and registers information is loaded from 'C:/Users/USER/Desktop/Vivado/Vitis/hw4/MEM_SYSTEM_wrapper/export/MEM_SYSTEM_wrapper/hw/MEM_SYSTEM_wrapper.xsa'.
+16:27:02 INFO  : 'configparams force-mem-access 1' command is executed.
+16:27:02 INFO  : Context for 'APU' is selected.
+16:27:02 INFO  : Sourcing of 'C:/Users/USER/Desktop/Vivado/Vitis/hw4/hw4_prog/_ide/psinit/ps7_init.tcl' is done.
+16:27:03 INFO  : 'ps7_init' command is executed.
+16:27:03 INFO  : 'ps7_post_config' command is executed.
+16:27:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:27:03 INFO  : The application 'C:/Users/USER/Desktop/Vivado/Vitis/hw4/hw4_prog/Debug/hw4_prog.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:27:03 INFO  : 'configparams force-mem-access 0' command is executed.
+16:27:03 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file C:/Users/USER/Desktop/Vivado/Vitis/hw4/hw4_prog/_ide/bitstream/MEM_SYSTEM_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/USER/Desktop/Vivado/Vitis/hw4/MEM_SYSTEM_wrapper/export/MEM_SYSTEM_wrapper/hw/MEM_SYSTEM_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/USER/Desktop/Vivado/Vitis/hw4/hw4_prog/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/USER/Desktop/Vivado/Vitis/hw4/hw4_prog/Debug/hw4_prog.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:27:03 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:27:03 INFO  : 'con' command is executed.
+16:27:03 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+16:27:03 INFO  : Disconnected from the channel tcfchan#3.
+16:27:27 INFO  : Checking for BSP changes to sync application flags for project 'hw4_prog'...
+16:27:38 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:27:39 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+16:27:39 INFO  : 'jtag frequency' command is executed.
+16:27:39 INFO  : Context for 'APU' is selected.
+16:27:39 INFO  : System reset is completed.
+16:27:42 INFO  : 'after 3000' command is executed.
+16:27:42 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+16:27:44 INFO  : Device configured successfully with "C:/Users/USER/Desktop/Vivado/Vitis/hw4/hw4_prog/_ide/bitstream/MEM_SYSTEM_wrapper.bit"
+16:27:44 INFO  : Context for 'APU' is selected.
+16:27:44 INFO  : Hardware design and registers information is loaded from 'C:/Users/USER/Desktop/Vivado/Vitis/hw4/MEM_SYSTEM_wrapper/export/MEM_SYSTEM_wrapper/hw/MEM_SYSTEM_wrapper.xsa'.
+16:27:44 INFO  : 'configparams force-mem-access 1' command is executed.
+16:27:44 INFO  : Context for 'APU' is selected.
+16:27:44 INFO  : Sourcing of 'C:/Users/USER/Desktop/Vivado/Vitis/hw4/hw4_prog/_ide/psinit/ps7_init.tcl' is done.
+16:27:45 INFO  : 'ps7_init' command is executed.
+16:27:45 INFO  : 'ps7_post_config' command is executed.
+16:27:45 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:27:45 INFO  : The application 'C:/Users/USER/Desktop/Vivado/Vitis/hw4/hw4_prog/Debug/hw4_prog.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:27:45 INFO  : 'configparams force-mem-access 0' command is executed.
+16:27:45 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file C:/Users/USER/Desktop/Vivado/Vitis/hw4/hw4_prog/_ide/bitstream/MEM_SYSTEM_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/USER/Desktop/Vivado/Vitis/hw4/MEM_SYSTEM_wrapper/export/MEM_SYSTEM_wrapper/hw/MEM_SYSTEM_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/USER/Desktop/Vivado/Vitis/hw4/hw4_prog/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/USER/Desktop/Vivado/Vitis/hw4/hw4_prog/Debug/hw4_prog.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:27:46 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:27:46 INFO  : 'con' command is executed.
+16:27:46 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+16:27:46 INFO  : Disconnected from the channel tcfchan#4.
+16:29:03 INFO  : Checking for BSP changes to sync application flags for project 'hw4_prog'...
+16:29:16 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+16:29:17 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+16:29:17 INFO  : 'jtag frequency' command is executed.
+16:29:17 INFO  : Context for 'APU' is selected.
+16:29:17 INFO  : System reset is completed.
+16:29:20 INFO  : 'after 3000' command is executed.
+16:29:20 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+16:29:23 INFO  : Device configured successfully with "C:/Users/USER/Desktop/Vivado/Vitis/hw4/hw4_prog/_ide/bitstream/MEM_SYSTEM_wrapper.bit"
+16:29:23 INFO  : Context for 'APU' is selected.
+16:29:23 INFO  : Hardware design and registers information is loaded from 'C:/Users/USER/Desktop/Vivado/Vitis/hw4/MEM_SYSTEM_wrapper/export/MEM_SYSTEM_wrapper/hw/MEM_SYSTEM_wrapper.xsa'.
+16:29:23 INFO  : 'configparams force-mem-access 1' command is executed.
+16:29:23 INFO  : Context for 'APU' is selected.
+16:29:23 INFO  : Sourcing of 'C:/Users/USER/Desktop/Vivado/Vitis/hw4/hw4_prog/_ide/psinit/ps7_init.tcl' is done.
+16:29:23 INFO  : 'ps7_init' command is executed.
+16:29:24 INFO  : 'ps7_post_config' command is executed.
+16:29:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:29:24 INFO  : The application 'C:/Users/USER/Desktop/Vivado/Vitis/hw4/hw4_prog/Debug/hw4_prog.elf' is downloaded to processor 'ps7_cortexa9_0'.
+16:29:24 INFO  : 'configparams force-mem-access 0' command is executed.
+16:29:24 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file C:/Users/USER/Desktop/Vivado/Vitis/hw4/hw4_prog/_ide/bitstream/MEM_SYSTEM_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/USER/Desktop/Vivado/Vitis/hw4/MEM_SYSTEM_wrapper/export/MEM_SYSTEM_wrapper/hw/MEM_SYSTEM_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/USER/Desktop/Vivado/Vitis/hw4/hw4_prog/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/USER/Desktop/Vivado/Vitis/hw4/hw4_prog/Debug/hw4_prog.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+16:29:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+16:29:24 INFO  : 'con' command is executed.
+16:29:24 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+16:29:24 INFO  : Disconnected from the channel tcfchan#5.

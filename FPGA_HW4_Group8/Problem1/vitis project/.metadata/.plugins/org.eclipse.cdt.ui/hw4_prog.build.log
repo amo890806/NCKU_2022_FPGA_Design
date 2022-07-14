@@ -1,0 +1,61 @@
+16:29:03 **** Incremental Build of configuration Debug for project hw4_prog ****
+make all 
+make --no-print-directory pre-build
+a9-linaro-pre-build-step
+' '
+make --no-print-directory main-build
+'Building file: ../src/main.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/main.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/Users/USER/Desktop/Vivado/Vitis/hw4/MEM_SYSTEM_wrapper/export/MEM_SYSTEM_wrapper/sw/MEM_SYSTEM_wrapper/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/main.d" -MT"src/main.o" -o "src/main.o" "../src/main.c"
+../src/main.c: In function 'main':
+../src/main.c:11:31: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
+   11 |   printf("offset = 0, Data = %x\n", Xil_In32(XPAR_AXI_BRAM_CTRL_0_S_AXI_BASEADDR + 0));
+      |                              ~^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                               |     |
+      |                               |     u32 {aka long unsigned int}
+      |                               unsigned int
+      |                              %lx
+../src/main.c:12:31: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
+   12 |   printf("offset = 4, Data = %x\n", Xil_In32(XPAR_AXI_BRAM_CTRL_0_S_AXI_BASEADDR + 4));
+      |                              ~^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                               |     |
+      |                               |     u32 {aka long unsigned int}
+      |                               unsigned int
+      |                              %lx
+../src/main.c:13:32: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
+   13 |   printf("offset = 28, Data = %x\n", Xil_In32(XPAR_AXI_BRAM_CTRL_0_S_AXI_BASEADDR + 28));
+      |                               ~^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                |     |
+      |                                |     u32 {aka long unsigned int}
+      |                                unsigned int
+      |                               %lx
+../src/main.c:14:32: warning: format '%x' expects argument of type 'unsigned int', but argument 2 has type 'u32' {aka 'long unsigned int'} [-Wformat=]
+   14 |   printf("offset = 64, Data = %x\n", Xil_In32(XPAR_AXI_BRAM_CTRL_0_S_AXI_BASEADDR + 64));
+      |                               ~^     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                |     |
+      |                                |     u32 {aka long unsigned int}
+      |                                unsigned int
+      |                               %lx
+../src/main.c:24:32: warning: format '%x' expects argument of type 'unsigned int', but argument 3 has type 'uint32_t' {aka 'long unsigned int'} [-Wformat=]
+   24 |   printf("offset = %d, Data = %x\n", i, rWord);
+      |                               ~^        ~~~~~
+      |                                |        |
+      |                                |        uint32_t {aka long unsigned int}
+      |                                unsigned int
+      |                               %lx
+'Finished building: ../src/main.c'
+' '
+'Building target: hw4_prog.elf'
+'Invoking: ARM v7 gcc linker'
+arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LC:/Users/USER/Desktop/Vivado/Vitis/hw4/MEM_SYSTEM_wrapper/export/MEM_SYSTEM_wrapper/sw/MEM_SYSTEM_wrapper/standalone_ps7_cortexa9_0/bsplib/lib -o "hw4_prog.elf"  ./src/main.o   -Wl,--start-group,-lxil,-lgcc,-lc,--end-group
+'Finished building target: hw4_prog.elf'
+' '
+'Invoking: ARM v7 Print Size'
+arm-none-eabi-size hw4_prog.elf  |tee "hw4_prog.elf.size"
+   text	   data	    bss	    dec	    hex	filename
+  49056	   2548	  22640	  74244	  12204	hw4_prog.elf
+'Finished building: hw4_prog.elf.size'
+' '
+
+16:29:05 Build Finished (took 2s.738ms)
+

@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include "xil_printf.h"
+#include "xil_io.h"
+#include "xparameters.h"
+
+int main(){
+	uint_32 rWord, wWord;
+
+
+	printf("Hw4 Read Test Program Start.\n");
+	for(int i=0; i<68; i=i+4){
+		rWord =  Xil_In32(XPAR_AXI_BRAM_CTRL_0_S_AXI_BASEADDR + i);
+		printf("offset = %d, Data = %x\n", i, rWord);
+	}
+	printf("Hw4 Read Test Program End.\n");
+	printf("Hw4 Write Test Program Start.\n");
+	for(int i=0; i<68; i=i+4){
+		wWord = i;
+		Xil_Out32(XPAR_AXI_BRAM_CTRL_0_S_AXI_BASEADDR + i, wWord);
+	}
+	for(int i=0; i<68; i=i+4){
+		 rWord = Xil_In32(XPAR_AXI_BRAM_CTRL_0_S_AXI_BASEADDR + i);
+		printf("offset = %d, Data = %x\n", i, rWord);
+	}
+	printf("Hw4 Write Test Program End.\n");
+}
